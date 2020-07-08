@@ -1,0 +1,18 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    LivingWorld\:
+        resource: '../../src/**/*.php'
+        exclude: '../../src/**/{*Command.php,*Controller.php}'
+
+    Monolog\Handler\RotatingFileHandler:
+        arguments:
+            - '%tmp.dir%/logger.log'
+
+    Monolog\Logger:
+        arguments:
+            - 'default'
+            - ['@Monolog\Handler\RotatingFileHandler']
+

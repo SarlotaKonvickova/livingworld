@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    LivingWorld\DummyCommand:
+        tags:
+          - 'console.command'
+
+    LivingWorld\LivingCommand:
+        tags:
+            - 'console.command'
